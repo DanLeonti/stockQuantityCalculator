@@ -29,27 +29,41 @@
 
     <script>
         function myFunction() {
-            var ca = document.getElementById("CA").value; // Capital Amount
+            let ca = document.getElementById("CA").value; // Capital Amount
             document.getElementById("CA").innerHTML = ca;
 
-            var ep = document.getElementById("EP").value; // Stock Entry Price
+            let ep = document.getElementById("EP").value; // Stock Entry Price
             document.getElementById("EP").innerHTML = ep;
 
-            var stp = document.getElementById("STP").value; // Stop Loss Price
+            let stp = document.getElementById("STP").value; // Stop Loss Price
             document.getElementById("STP").innerHTML = stp;
 
-            var ml = document.getElementById("ML").value; // Max Loss %
+            let ml = document.getElementById("ML").value; // Max Loss %
             document.getElementById("ML").innerHTML = ml;
 
-            var ymsl = ((ml / 100) * ca);
+            let ymsl = ((ml / 100) * ca);
             document.getElementById("ymsl").innerHTML = ymsl; // Equation: Y = P% * X
 
-            var tstb = ymsl / (ep - stp);                       // Equation: Max Loss / (Stock Entry Price - Stop Loss Price)
-            document.getElementById("tstb").innerHTML = tstb; 
+            let tstb = ymsl / (ep - stp);                       // Equation: Max Loss / (Stock Entry Price - Stop Loss Price)
+            document.getElementById("tstb").innerHTML = tstb;
         }
     </script>
-    <h2>Total Stocks to Buy: <span id="tstb"></span></h2>
-    <h2>Your Max Loss: <span id="ymsl"></span></h2>
+    <h1>Total Stocks to Buy: <span id="tstb"></span></h1>
+    <h1>Your Max Loss: <span id="ymsl"></span></h1>
+    <br>
+    <br>
+    <h3>Risk Disclaimer</h3>
+    <p>Before using this site, please make sure that you note the following important information.</p>
+
+    <h3>No Investment Advice</h3>
+    <p>I am not an investment advisor, I have no access to non-public information about publicly traded companies, and this is not a place for the giving or receiving of financial advice, advice concerning investment decisions or tax or legal advice. I am not regulated by the Financial Services Authority.</p>
+
+    <h3>No reliance</h3>
+    <p>Accordingly, we will not be liable, whether in contract, tort (including negligence) or otherwise, in respect of any damage, expense or other loss you may suffer arising out of such information or any reliance you may place upon such information. Any arrangements between you and any third party contacted via the Website are at your sole risk.</p>
+
+    <h3>I encourage you to invest carefully and read investment information available at the websites of the SEC at www.sec.gov and FINRA at www.finra.org.</h3>
+
+
 
 </body>
 </html>
