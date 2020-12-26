@@ -12,43 +12,43 @@
 </head>
 <body>
     <h1>Stock Quantity Calculator</h1>
-    <h3>Capital Amount</h3>
-    <input type="text" id="CA" value="Capital Amount">
+    <h3>Capital Amount:</h3>
+    <input type="text" id="CA">
 
-    <h3>Entry price</h3>
-    <input type="text" id="EP" value="Entry price">
+    <h3>Entry Price:</h3>
+    <input type="text" id="EP">
 
-    <h3>Stop Loss Price</h3>
-    <input type="text" id="STP" value="Stop Loss Price">
+    <h3>Stop Loss Price:</h3>
+    <input type="text" id="STP">
 
-    <h3>Max Loss %</h3>
-    <input type="text" id="ML" value="Max Loss %">
+    <h3>Max Loss %:</h3>
+    <input type="text" id="ML">
 
     <h3></h3>
     <button onclick="myFunction()">Calculate!</button>
 
     <script>
         function myFunction() {
-            var ca = document.getElementById("CA").value;
+            var ca = document.getElementById("CA").value; // Capital Amount
             document.getElementById("CA").innerHTML = ca;
 
-            var ep = document.getElementById("EP").value;
+            var ep = document.getElementById("EP").value; // Stock Entry Price
             document.getElementById("EP").innerHTML = ep;
 
-            var stp = document.getElementById("STP").value;
+            var stp = document.getElementById("STP").value; // Stop Loss Price
             document.getElementById("STP").innerHTML = stp;
 
-            var ml = document.getElementById("ML").value;
+            var ml = document.getElementById("ML").value; // Max Loss %
             document.getElementById("ML").innerHTML = ml;
 
             var ymsl = ((ml / 100) * ca);
-            document.getElementById("ymsl").innerHTML = ymsl;
+            document.getElementById("ymsl").innerHTML = ymsl; // Equation: Y = P% * X
 
-            var tqb = ymsl/(ep - stp);
-            document.getElementById("tqb").innerHTML = tqb;
+            var tstb = ymsl / (ep - stp);                       // Equation: Max Loss / (Stock Entry Price - Stop Loss Price)
+            document.getElementById("tstb").innerHTML = tstb; 
         }
     </script>
-    <h2>Total Quantity to Buy: <span id="tqb"></span></h2>
+    <h2>Total Stocks to Buy: <span id="tstb"></span></h2>
     <h2>Your Max Loss: <span id="ymsl"></span></h2>
 
 </body>
