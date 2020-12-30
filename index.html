@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 
 <html lang="en">
 <head>
@@ -8,27 +8,55 @@
     <title>Stock Calculator</title>
     <link href="styles.css" rel="stylesheet" />
     <script src="script.js" defer></script>
+    <style>
+        .alert {
+            padding: 20px;
+            background-color: #f44336;
+            color: white;
+        }
+
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+            .closebtn:hover {
+                color: black;
+            }
+    </style>
 
 </head>
 <body>
-    <h1>Stock Quantity Calculator</h1>
-    <h3>Capital Amount:</h3>
-    <input type="text" id="CA">
-
-    <h3>Entry Price:</h3>
-    <input type="text" id="EP">
-
-    <h3>Stop Loss Price:</h3>
-    <input type="text" id="STP">
-
-    <h3>Max Loss %:</h3>
-    <input type="text" id="ML">
-
+    <h1>Stocks Quantity Calculator</h1>
+    <label for="CA"><strong>Capital Amount (*):</strong></label>
+    <input type="number" id="CA" required>
+    <br>
+    <br>
+    <label for="EP"><strong>Entry Price (*):</strong></label>
+    <input type="number" id="EP" required>
+    <br>
+    <br>
+    <label for="STP"><strong>Stop Loss Price (*):</strong></label>
+    <input type="number" id="STP" required>
+    <br>
+    <br>
+    <label for="ML"><strong>Max Loss % (*):</strong></label>
+    <input type="number" id="ML" required>
+    <br>
+    <br>
     <h3></h3>
-    <button onclick="myFunction()">Calculate!</button>
+    <button onclick="calculate()">Calculate!</button>
+
 
     <script>
-        function myFunction() {
+        function calculate() {
+
             let ca = document.getElementById("CA").value; // Capital Amount
             document.getElementById("CA").innerHTML = ca;
 
@@ -49,17 +77,17 @@
         }
     </script>
     <h1>Total Stocks to Buy: <span id="tstb"></span></h1>
-    <h1>Your Max Loss: <span id="ymsl"></span></h1>
+    <h1>Your Max Loss $: <span id="ymsl"></span></h1>
     <br>
     <br>
-    <h3>Risk Disclaimer</h3>
+    <h2>Risk Disclaimer</h2>
     <p>Before using this site, please make sure that you note the following important information.</p>
 
     <h3>No Investment Advice</h3>
     <p>I am not an investment advisor, I have no access to non-public information about publicly traded companies, and this is not a place for the giving or receiving of financial advice, advice concerning investment decisions or tax or legal advice. I am not regulated by the Financial Services Authority.</p>
 
     <h3>No reliance</h3>
-    <p>Accordingly, we will not be liable, whether in contract, tort (including negligence) or otherwise, in respect of any damage, expense or other loss you may suffer arising out of such information or any reliance you may place upon such information. Any arrangements between you and any third party contacted via the Website are at your sole risk.</p>
+    <p>Accordingly, I will not be liable, whether in contract, tort (including negligence) or otherwise, in respect of any damage, expense or other loss you may suffer arising out of such information or any reliance you may place upon such information. Any arrangements between you and any third party contacted via the Website are at your sole risk.</p>
 
     <h3>I encourage you to invest carefully and read investment information available at the websites of the SEC at www.sec.gov and FINRA at www.finra.org.</h3>
 
